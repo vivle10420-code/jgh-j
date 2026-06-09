@@ -588,71 +588,70 @@
         </div>
     </section>
 
-    <!-- Guestbook Section -->
+    <!-- Guestbook Section (Embedded Padlet Integration) -->
     <section id="guestbook" class="py-20 bg-white dark:bg-zinc-950 border-t border-gray-100 dark:border-zinc-900/40">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <!-- Guestbook Form (Left Side) -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div>
-                        <span class="text-arch-accent font-serif italic text-base tracking-wider">Leave a Trace</span>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Guestbook Info (Left Side - 4 Columns) -->
+                <div class="lg:col-span-4 flex flex-col justify-between space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-arch-accent font-serif italic text-base tracking-wider">Interactive Trace</span>
                         <h2 class="text-2xl md:text-3xl font-serif font-bold mt-1 text-arch-primary dark:text-white">아카이브 방명록</h2>
-                        <p class="text-xs text-gray-400 mt-2 font-light">
-                            방문 기록을 남겨주세요. 전가현 학생에게 직접적인 피드백이나 남기고 싶은 문장을 자유롭게 포스트할 수 있습니다.
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-light leading-relaxed">
+                            가현님의 패들릿(Padlet) 피드백 채널과 직접 연동된 실시간 방명록 영역입니다. 
+                            작품에 대한 감상, 크리틱, 혹은 응원의 한 마디를 포스트잇처럼 자유롭게 붙여주세요.
+                        </p>
+                        <p class="text-[11px] text-gray-400 font-light">
+                            * 아래 내장된 보드 내부에서 직접 메모를 더블 클릭하거나 하단의 우측 (+) 버튼을 눌러 글을 등록하실 수 있습니다.
                         </p>
                     </div>
 
-                    <form id="guestbook-form" class="space-y-4 bg-arch-bg dark:bg-zinc-900/60 p-6 border border-gray-100 dark:border-zinc-850 rounded-lg relative overflow-hidden">
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 mb-1">작성자 명 <span class="text-arch-accent">*</span></label>
-                            <input type="text" id="gb-name" required placeholder="이름 또는 직함 (예: 김건축 소장)" class="w-full px-4 py-2.5 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 text-xs focus:border-arch-accent focus:ring-1 focus:ring-arch-accent rounded outline-none transition-colors">
-                        </div>
-
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 mb-1">메시지 구분 (Stamp) <span class="text-arch-accent">*</span></label>
-                            <div class="grid grid-cols-3 gap-2">
-                                <label class="border border-gray-200 dark:border-zinc-800 rounded p-2 text-center cursor-pointer text-[11px] block transition-all hover:border-arch-accent relative">
-                                    <input type="radio" name="gb-stamp" value="APPROVED" checked class="hidden peer">
-                                    <span class="peer-checked:text-arch-accent font-semibold block text-gray-400">APPROVED</span>
-                                    <span class="text-[9px] text-gray-400 block mt-0.5">승인/권장</span>
-                                </label>
-                                <label class="border border-gray-200 dark:border-zinc-800 rounded p-2 text-center cursor-pointer text-[11px] block transition-all hover:border-arch-accent relative">
-                                    <input type="radio" name="gb-stamp" value="CRITIC" class="hidden peer">
-                                    <span class="peer-checked:text-arch-accent font-semibold block text-gray-400">CRITIC</span>
-                                    <span class="text-[9px] text-gray-400 block mt-0.5">크리틱</span>
-                                </label>
-                                <label class="border border-gray-200 dark:border-zinc-800 rounded p-2 text-center cursor-pointer text-[11px] block transition-all hover:border-arch-accent relative">
-                                    <input type="radio" name="gb-stamp" value="SUPPORT" class="hidden peer">
-                                    <span class="peer-checked:text-arch-accent font-semibold block text-gray-400">SUPPORT</span>
-                                    <span class="text-[9px] text-gray-400 block mt-0.5">응원/교류</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 mb-1">내용 <span class="text-arch-accent">*</span></label>
-                            <textarea id="gb-message" rows="3" required placeholder="방문 의견이나 감상평을 작성해 주세요." class="w-full px-4 py-2.5 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 text-xs focus:border-arch-accent focus:ring-1 focus:ring-arch-accent rounded outline-none transition-colors resize-none"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-2.5 bg-arch-primary text-white dark:bg-white dark:text-arch-darkbg font-medium text-xs tracking-wider uppercase hover:bg-arch-accent dark:hover:bg-arch-accent dark:hover:text-white rounded transition-colors flex items-center justify-center gap-2 shadow-sm">
-                            방명록 등록 <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
-                        </button>
-                    </form>
+                    <!-- Direct Link Button to open Padlet in New Tab -->
+                    <div class="space-y-3 pt-6 border-t border-gray-100 dark:border-zinc-900">
+                        <span class="text-[10px] uppercase tracking-wider font-semibold text-gray-400 block">External Access</span>
+                        <a href="https://padlet.com/vivle10420/padlet-tk86n1uwoges3g4k" target="_blank" rel="noopener noreferrer" class="group w-full py-3 px-4 bg-arch-bg hover:bg-arch-primary hover:text-white dark:bg-zinc-900 dark:hover:bg-white dark:hover:text-arch-darkbg text-arch-primary dark:text-white border border-gray-200 dark:border-zinc-800 text-xs tracking-wider font-medium rounded-sm flex items-center justify-between transition-all duration-300">
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="message-square" class="w-4 h-4 text-arch-accent"></i>
+                                패들릿에서 전체 화면으로 열기
+                            </span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Live Guestbook Board (Right Side) -->
-                <div class="lg:col-span-7 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between border-b border-gray-100 dark:border-zinc-900 pb-3 mb-4">
-                            <span class="text-xs uppercase tracking-widest font-semibold text-arch-primary dark:text-white flex items-center gap-2">
-                                <i data-lucide="message-square" class="w-4 h-4 text-arch-accent"></i> ACTIVE STAMPS BOARD
-                            </span>
-                            <span class="text-[10px] text-gray-400" id="gb-count">0 ENTRIES</span>
+                <!-- Padlet Embedded Iframe Container (Right Side - 8 Columns) -->
+                <div class="lg:col-span-8">
+                    <!-- Browser Style Device Mockup frame for Architectural Elegance -->
+                    <div class="w-full bg-gray-50 dark:bg-zinc-900/60 border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden shadow-xl flex flex-col h-[580px]">
+                        <!-- Browser Header bar -->
+                        <div class="bg-gray-100 dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 px-4 py-3 flex items-center justify-between select-none">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-rose-400/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400/80 inline-block"></span>
+                            </div>
+                            <!-- Faux Address Bar -->
+                            <div class="bg-white dark:bg-zinc-950 text-gray-400 dark:text-zinc-500 rounded text-[10px] px-4 py-1 font-mono w-1/2 text-center overflow-hidden whitespace-nowrap text-ellipsis border border-gray-200/50 dark:border-zinc-800/40">
+                                padlet.com/vivle10420/padlet-tk86n1uwoges3g4k
+                            </div>
+                            <div class="flex items-center text-gray-400">
+                                <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+                            </div>
                         </div>
                         
-                        <!-- Scrollable message cards -->
-                        <div id="guestbook-list" class="space-y-3 max-h-[420px] overflow-y-auto pr-2">
-                            <!-- Dynamic Content Injected via Javascript -->
+                        <!-- Padlet Embed Code -->
+                        <div class="flex-1 w-full bg-white dark:bg-zinc-950 relative">
+                            <!-- Failsafe Loading skeleton -->
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-arch-bg dark:bg-zinc-950 z-0 text-center p-6 pointer-events-none">
+                                <div class="w-8 h-8 border-2 border-arch-accent border-t-transparent rounded-full animate-spin mb-3"></div>
+                                <span class="text-xs text-gray-400 font-mono">LOADING PADLET SYSTEM...</span>
+                            </div>
+                            <iframe src="https://padlet.com/embed/vivle10420/padlet-tk86n1uwoges3g4k" 
+                                    width="100%" 
+                                    height="100%" 
+                                    class="w-full h-full relative z-10 border-none bg-transparent"
+                                    allow="camera;microphone;geolocation" 
+                                    title="전가현 패들릿 방명록 보드"></iframe>
                         </div>
                     </div>
                 </div>
@@ -1247,122 +1246,9 @@
             requestAnimationFrame(drawCadBlueprint);
         }
 
-        // Default guestbook initial messages (Pre-populated architectural feedback)
-        const defaultGuestbookEntries = [
-            {
-                id: 1,
-                name: "민성식 수석연구원",
-                stamp: "APPROVED",
-                message: "인사동 목구조 한옥 도서관 도면 구조 설계를 매우 흥미롭게 봤습니다. 전통과 현대의 기하학적 접합 기법을 훌륭히 풀어냈네요. 향후 실무에서도 기대가 큽니다.",
-                time: "2026.06.02 14:20"
-            },
-            {
-                id: 2,
-                name: "이주원 디자이너",
-                stamp: "SUPPORT",
-                message: "가현씨 졸업 작품전 축하해요! 1:50 디테일 모형 퀄리티가 정말 인상적이었습니다. 언제 한번 모형 제작 팁 커피챗 해요!",
-                time: "2026.06.05 18:05"
-            },
-            {
-                id: 3,
-                name: "임재훈 교수",
-                stamp: "CRITIC",
-                message: "경계의 틈: 복합문화 정거장 프로젝트에서 하부 철도 데크화에 따른 진동 감쇄 메커니즘을 Grasshopper 수치해석으로 검증한 점은 훌륭한 엔지니어링 마인드셋입니다. 스케일 감각이 안정적입니다.",
-                time: "2026.06.08 10:15"
-            }
-        ];
-
-        // Retrieve or initialize guestbook list from LocalStorage
-        function getGuestbookEntries() {
-            const entries = localStorage.getItem('kgh_portfolio_guestbook');
-            if (!entries) {
-                localStorage.setItem('kgh_portfolio_guestbook', JSON.stringify(defaultGuestbookEntries));
-                return defaultGuestbookEntries;
-            }
-            return JSON.parse(entries);
-        }
-
-        // Render Guestbook records to the screen dynamically
-        function renderGuestbook() {
-            const entries = getGuestbookEntries();
-            const container = document.getElementById('guestbook-list');
-            const countLabel = document.getElementById('gb-count');
-            
-            countLabel.textContent = `${entries.length} ENTRIES`;
-            container.innerHTML = '';
-
-            // Render from newest to oldest
-            entries.slice().reverse().forEach(entry => {
-                let badgeStyle = "bg-green-100 text-green-800 dark:bg-green-950/40 dark:text-green-400 border-green-200 dark:border-green-900";
-                if (entry.stamp === "CRITIC") {
-                    badgeStyle = "bg-rose-100 text-rose-800 dark:bg-rose-950/40 dark:text-rose-400 border-rose-200 dark:border-rose-900";
-                } else if (entry.stamp === "SUPPORT") {
-                    badgeStyle = "bg-blue-100 text-blue-800 dark:bg-blue-950/40 dark:text-blue-400 border-blue-200 dark:border-blue-900";
-                }
-
-                const cardHtml = `
-                    <div class="p-4 bg-arch-bg dark:bg-zinc-900 border border-gray-100 dark:border-zinc-850 rounded-lg relative overflow-hidden group hover:border-arch-accent transition-all duration-300">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-arch-primary dark:text-white">${entry.name}</span>
-                                <span class="text-[9px] px-1.5 py-0.5 border rounded-full font-serif font-bold tracking-widest ${badgeStyle}">${entry.stamp}</span>
-                            </div>
-                            <span class="text-[9px] font-mono text-gray-400">${entry.time}</span>
-                        </div>
-                        <p class="text-[11px] md:text-xs text-gray-600 dark:text-gray-300 font-light leading-relaxed whitespace-pre-line">
-                            ${entry.message}
-                        </p>
-                    </div>
-                `;
-                container.innerHTML += cardHtml;
-            });
-        }
-
-        // Handle Guestbook submissions
-        document.getElementById('guestbook-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const nameInput = document.getElementById('gb-name');
-            const messageInput = document.getElementById('gb-message');
-            const selectedStamp = document.querySelector('input[name="gb-stamp"]:checked').value;
-
-            if (!nameInput.value.trim() || !messageInput.value.trim()) return;
-
-            // Generate structural local-friendly timestamp
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const date = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const timeStr = `${year}.${month}.${date} ${hours}:${minutes}`;
-
-            const newEntry = {
-                id: Date.now(),
-                name: nameInput.value.trim(),
-                stamp: selectedStamp,
-                message: messageInput.value.trim(),
-                time: timeStr
-            };
-
-            const entries = getGuestbookEntries();
-            entries.push(newEntry);
-            localStorage.setItem('kgh_portfolio_guestbook', JSON.stringify(entries));
-
-            // Reset Form fields safely
-            nameInput.value = '';
-            messageInput.value = '';
-
-            // Rerender and flash toast
-            renderGuestbook();
-            triggerCustomToast("성공적으로 등록되었습니다!", "방명록 담벼락에 가현님을 향한 소중한 흔적이 등록되었습니다.");
-        });
-
         window.onload = function() {
             // Start the CAD system on window load
             drawCadBlueprint();
-            // Load and display current localstorage Guestbook posts
-            renderGuestbook();
         };
 
         // Custom Success Toast Notification trigger instead of dangerous alert()
